@@ -2,6 +2,11 @@
 setup_certs() {
     sleep 30
     certbot -n --nginx --agree-tos -m lukas@some.engineering -d cloudkeeper.sh
+    while :
+    do
+        sleep 604800
+        certbot renew --quiet
+    done
 }
 setup_certs &
-exec /docker-entrypoint.sh "$@"
+/docker-entrypoint.sh "$@"
