@@ -1,6 +1,7 @@
 FROM docker.io/library/nginx
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/default.conf /etc/nginx/conf.d/default.conf
+COPY docker/bootstrap /bootstrap
 RUN apt-get update \
     && apt-get -y install \
         python3-certbot \
@@ -15,6 +16,7 @@ RUN apt-get update \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
     && rm -f /bin/sh \
     && ln -s /bin/bash /bin/sh \
+    && chmod +x /bootstrap \
     && locale-gen \
     && mkdir -p /var/lib/nginx/cache \
     && chown -R nginx:nginx /var/lib/nginx/cache \
