@@ -21,3 +21,4 @@ RUN apt-get update \
     && mkdir -p /var/spool/cron/crontabs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENTRYPOINT ["/bootstrap"]

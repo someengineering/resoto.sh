@@ -1,0 +1,7 @@
+#!/bin/bash
+setup_certs() {
+    sleep 30
+    certbot -n --nginx --agree-tos -m lukas@some.engineering -d cloudkeeper.sh
+}
+setup_certs &
+exec /docker-entrypoint.sh "$@"
