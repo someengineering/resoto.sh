@@ -1,7 +1,7 @@
 #!/bin/bash
 setup_certs() {
     sleep 30
-    certbot -n --nginx --agree-tos -m lukas@some.engineering -d cloudkeeper.sh
+    certbot -n --nginx --agree-tos -m lukas@some.engineering -d resoto.sh
     while :
     do
         sleep 604800

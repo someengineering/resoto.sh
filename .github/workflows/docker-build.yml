@@ -26,7 +26,7 @@ jobs:
                 uses: docker/metadata-action@v3
                 with:
                     images: |
-                        ghcr.io/someengineering/webapp-cloudkeeper.sh
+                        ghcr.io/someengineering/resoto.sh
                     flavor: |
                       latest=true
                     tags: |

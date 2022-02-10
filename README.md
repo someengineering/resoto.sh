@@ -1,2 +1,2 @@
-# cloudkeeper.sh
-Docker image running on cloudkeeper.sh
+# resoto.sh
+Docker image running on resoto.sh
